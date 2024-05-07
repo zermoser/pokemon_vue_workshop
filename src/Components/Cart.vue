@@ -22,7 +22,6 @@
             </div>
             <div class="col2 col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-4">
               <span class="remove-btn" @click="removeThing(thing.id)">remove</span>
-              <!-- <span class="confirm-btn" @click="removeThing2(thing.id)">remove</span> -->
             </div>
           </div>
         </transition-group >
@@ -37,11 +36,7 @@
           </div>
           
         </div>
-                <hr v-if="this.cartContent.length !== 0">
-
-      
-                
-          
+            <hr v-if="this.cartContent.length !== 0">
       </div>
     </div>
 
@@ -80,9 +75,6 @@ export default {
     },
     removeThing(id){
       this.$store.commit('outCart',id)
-  },
-    removeThing2(id){
-      this.$store.commit('outCart2',id)
   }
 }
 }

@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-// import createPersistedState from 'vuex-persistedstate';
 
 Vue.use(Vuex);
 
@@ -47,16 +46,26 @@ export default new Vuex.Store({
       },
     ]
   },
-  // plugins: [createPersistedState()],
   getters: {
     itemsNumber(state){  // Cart Component
       return state.cartItems.length
     },
     totalPrice(state) { // Cart Component
-      if (state.cartItems.length != 0){
-       return state.cartItems.reduce((a, b) => {
-         return (b.price == null ) ? a : a + b.price
-       }, 0)
+      // if (state.cartItems.length != 0){
+      //  return state.cartItems.reduce((a, b) => {
+      //    return (b.price == null ) ? a : a + b.price
+      //  }, 0)
+      // }
+      if (state.cartItems.length != 0) { // ตรวจสอบว่าตะกร้าไม่ว่าง
+        return state.cartItems.reduce((total, item) => {
+          if (item.price != null) { // ตรวจสอบว่าราคาของสินค้าไม่เป็น null
+            return total + item.price; // นำราคาของสินค้าไปบวกกับราคารวม
+          } else {
+            return total; // ถ้าราคาเป็น null ให้คืนค่าราคารวมเดิม
+          }
+        }, 0); // ค่าเริ่มต้นของ total คือ 0
+      } else {
+        return 0; // ถ้าตะกร้าว่าง ให้คืนค่าราคารวมเป็น 0
       }
     },
     infoLength(state) { // Info Component
@@ -72,10 +81,6 @@ export default new Vuex.Store({
     outCart(state, n) { // Cart Component
       let index = state.cartItems.findIndex(x => x.id === n)
       return state.cartItems.splice(index, 1)
-    },
-    outCart2(state, n) { // Cart Component
-      let index = state.cartItems.findIndex(x => x.id === n)
-      return state.cartItems.splice(index, 100)
     },
     addtoInfo(state, n) { // Info Component
        return state.infoPage.push(n)
