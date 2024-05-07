@@ -39,13 +39,12 @@
 </template>
 
 <script>
-import slider from './slider.vue'
 import Card from './Card.vue'
 
 export default {
   name:'Grid',
   components: {
-    slider, Card
+   Card
   },
   data() {
     return {
