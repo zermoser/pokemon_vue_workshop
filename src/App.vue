@@ -9,7 +9,6 @@
 <script>
 import Header from '@/Components/Header.vue'
 import Footer from '@/Components/Footer.vue'
-require('dotenv').config();
 
 export default{
   name: 'app',

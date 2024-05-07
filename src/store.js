@@ -15,34 +15,30 @@ export default new Vuex.Store({
         price: 100,
         color: 'green',
         type: 'plant'
-      }, {
+      }, 
+      {
         id:1,
         img: require('@/assets/004.png'),
         title: 'แย้แดงหางไม้',
         price: 120,
         color: 'red',
         type: 'fire'
-      }, {
+      },
+      {
         id:2,
         img: require('@/assets/007.png'),
         title: 'เต่างอยรอคอยอ้าย',
         price: 112,
         color: 'blue',
         type: 'water'
-      }, {
+      }, 
+      {
         id:3,
         img: require('@/assets/150.png'),
         title: 'จิ้งเหลนหน้ายาก',
         price: 9999,
         color: 'white',
         type: 'psycho'
-      }, {
-        id:4,
-        img: require('@/assets/025.png'),
-        title: 'หนูสายฟ้าหน้าแบ๊ว',
-        price: 5,
-        color: 'yellow',
-        type: 'thunder'
       },
     ]
   },
