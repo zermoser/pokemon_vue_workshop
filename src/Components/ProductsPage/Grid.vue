@@ -11,7 +11,7 @@
                 <h5 class="ele1" @click="sortI('thunder')">- สายฟ้า</h5>
                 <h5 class="ele1" @click="sortI('psycho')">- พลังจิต</h5>
                 <h5 class="ele1" @click="sortI('love')">- ความรัก</h5>
-                <h5 class="ele1" @click="sortI('love')"> ยกเลิกการค้นหา </h5>
+                <h5 class="ele1" @click="sortI('')"> ยกเลิกการค้นหา </h5>
                 <br><br><br>
                 <h4 class="search-title">อยากได้สีอะไรล่ะ?</h4>
                   <h6>เลือกสีของ pokemon</h6><br>

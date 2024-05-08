@@ -1,17 +1,17 @@
 <template>
   <div>
-    <Breadc />
+    <ProductCard />
     <Grid />
   </div>
 </template>
 
 <script>
-import Breadc from '@/Components/ProductsPage/Breadc.vue'
+import ProductCard from '@/Components/ProductsPage/ProductCard.vue'
 import Grid from '@/Components/ProductsPage/Grid.vue'
 
 export default {
   components: {
-    Breadc, Grid
+    ProductCard, Grid
   }
 }
 </script>
