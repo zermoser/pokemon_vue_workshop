@@ -5,21 +5,21 @@
             <div class="card-body p-5">
               <div class="search-title">
                 <h5>เลือกธาตุของ Pokemon</h5>
-                <br>
                 <h5 class="ele1" @click="sortI('fire')">- ไฟ</h5>
                 <h5 class="ele1" @click="sortI('plant')">- พืช</h5>
                 <h5 class="ele1" @click="sortI('water')">- น้ำ</h5>
                 <h5 class="ele1" @click="sortI('thunder')">- สายฟ้า</h5>
                 <h5 class="ele1" @click="sortI('psycho')">- พลังจิต</h5>
                 <h5 class="ele1" @click="sortI('love')">- ความรัก</h5>
+                <h5 class="ele1" @click="sortI('love')"> ยกเลิกการค้นหา </h5>
                 <br><br><br>
                 <h4 class="search-title">อยากได้สีอะไรล่ะ?</h4>
-                  <h7>เลือกสีของ pokemon</h7><br>
+                  <h6>เลือกสีของ pokemon</h6><br>
                   <span class="circle" style="background-color:#e51c23" @click="sortI('red')"></span>
                   <span class="circle" style="background-color:#2baf2b" @click="sortI('green')"></span>
                   <span class="circle" style="background-color:#5677fc" @click="sortI('blue')" ></span>
                   <span class="circle" style="background-color:#ffee58" @click="sortI('yellow')"></span>
-                  <span class="circle" style="background-color:white" @click="sortI('white')"></span>
+                  <span class="circle" style="background-color:#fff" @click="sortI('white')"></span>
                   <span class="circle" style="background-color:#dbbc8c" @click="sortI('brown')"></span>
               </div>
 
@@ -27,13 +27,11 @@
           </div>
         </div>
         <div class="row col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 text-center">
-          <div v-if="this.cards == 0" class="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div v-if="this.cards == 0" class="col-12">
             <br><br><br><br><br><br><h3 style="margin-left:9rem;margin-right:9rem">ขอโทษนะ Pokemon ตัวนี้ไม่มี</h3>
              <br><h1 style="margin-left:9rem;margin-right:9rem">ก็เหมือนกับที่เขาที่ไม่มีใจให้คุณไง ♥</h1>
           </div>
-
             <Card :CardArray="slicedCards" />
-
         </div>
       </div>
 </template>
@@ -48,9 +46,7 @@ export default {
   },
   data() {
     return {
-      cards: [],
-      showCards: 6,
-      sortButton: 'DEFAULT'
+      cards: []
     }
   },
   created(){
@@ -65,9 +61,6 @@ export default {
     }
   },
   methods: {
-    incCardNumber() {
-      return this.showCards += 6
-    },
     sortI(name){
       this.cards = this.it.filter((e) => e.type.match(name) || e.color.match(name))
     },

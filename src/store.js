@@ -40,6 +40,14 @@ export default new Vuex.Store({
         color: 'white',
         type: 'psycho'
       },
+      {
+        id:4,
+        img: require('@/assets/025.png'),
+        title: 'หนูสายฟ้าหน้าแบ๊ว',
+        price: 5,
+        color: 'yellow',
+        type: 'thunder'
+      }
     ]
   },
   getters: {
